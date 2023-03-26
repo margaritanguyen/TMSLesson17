@@ -1,0 +1,30 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+table, td, tr, th {
+  border: 1px outset;
+}
+
+.tr-green {
+    background-color: mediumseagreen;
+}
+
+.tr-red {
+    background-color: lightcoral;
+}

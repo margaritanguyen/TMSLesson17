@@ -1,0 +1,20 @@
+﻿@model UserViewModel
+
+
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{    
+    <div class="text-center">
+        <h1>Account Login</h1>
+        <p>
+            @Html.LabelFor(m=>m.Username, "Username")<br/>
+            @Html.TextBoxFor(m=>m.Username)
+        </p>
+        <p>
+            @Html.LabelFor(m=>m.Password, "Password")<br />
+            @Html.TextBox("password","", new { type="password" })
+        </p>
+        <p>
+            <input type="submit" value="Login" />
+        </p>
+    </div>
+}

@@ -1,0 +1,31 @@
+﻿@model InventoryViewModel
+
+<h1>Inventory</h1>
+<table class="table">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>EstimatedCount</th>
+        <th>ActualCount</th>
+        <th>Difference</th>
+    </tr>
+    @foreach (var m in Model.Items)
+    {
+        var stateClass = "tr-red";
+
+        if (@m.ActualCount - @m.EstimatedCount == 0)
+        {
+            stateClass = "tr-green";
+        }
+
+        <tr class="@stateClass">            
+            <td>@m.Code</td>
+            <td>@m.Name</td>
+            <td>@Model.Categories.Where(x=>x.Id == @m.CategoryId).FirstOrDefault().Name</td>
+            <td>@m.EstimatedCount</td>
+            <td>@m.ActualCount</td>
+            <td>@(@m.ActualCount - @m.EstimatedCount)</td>
+        </tr>
+    }
+</table>
